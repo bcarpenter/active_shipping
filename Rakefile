@@ -15,6 +15,25 @@ PKG_FILES = FileList[
 ].exclude(/\.svn$/)
 
 
+spec = Gem::Specification.new do |s|
+  s.platform = Gem::Platform::RUBY
+  s.summary = ""
+  s.name = PKG_NAME
+  s.version = PKG_VERSION
+  s.requirements << 'activesupport or rails'
+  s.require_path = 'lib'
+  s.autorequire = 'rake'
+  s.files = PKG_FILES
+  s.description = <<EOF
+EOF
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.need_zip = true
+  pkg.need_tar = true
+end
+
+
 desc "Default Task"
 task :default => 'test:units'
 task :test => ['test:units','test:remote']
