@@ -37,7 +37,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name = "activeshipping"
+    s.name = "active_shipping"
     # s.executables = "jeweler"
     s.summary = "Gemified activeshipping libs"
     s.email = "ben@bencarpenter.org"
