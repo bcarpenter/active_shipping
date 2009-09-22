@@ -2,37 +2,6 @@ require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require 'rake/gempackagetask'
-require 'rake/contrib/rubyforgepublisher'
-
-
-PKG_VERSION = "0.0.1"
-PKG_NAME = "activeshipping"
-PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
-
-PKG_FILES = FileList[
-    "lib/**/*", "examples/**/*", "[A-Z]*", "Rakefile"
-].exclude(/\.svn$/)
-
-
-spec = Gem::Specification.new do |s|
-  s.platform = Gem::Platform::RUBY
-  s.summary = ""
-  s.name = PKG_NAME
-  s.version = PKG_VERSION
-  s.requirements << 'activesupport or rails'
-  s.require_path = 'lib'
-  s.autorequire = 'rake'
-  s.files = PKG_FILES
-  s.description = <<EOF
-EOF
-end
-
-Rake::GemPackageTask.new(spec) do |pkg|
-  pkg.need_zip = true
-  pkg.need_tar = true
-end
-
 
 desc "Default Task"
 task :default => 'test:units'
@@ -63,6 +32,21 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-task :install => [:package] do
-  `gem install pkg/#{PKG_FILE_NAME}.gem`
+
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |s|
+    s.name = "activeshipping"
+    # s.executables = "jeweler"
+    s.summary = "Gemified activeshipping libs"
+    s.email = "ben@bencarpenter.org"
+    s.homepage = "http://github.com/bcarpenter/active_shipping"
+    s.description = "Use for Fedex/UPS/USPS tracking and more... Originally from: http://github.com/Shopify/active_shipping"
+    s.authors = ["Shopify"]
+    s.files =  FileList["[A-Z]*", "{lib,examples}/**/*", "Rakefile"]
+    s.add_dependency 'activesupport'
+  end
+rescue LoadError
+  puts "Jeweler, or one of its dependencies, is not available. Install it with: sudo gem install jeweler"
 end
