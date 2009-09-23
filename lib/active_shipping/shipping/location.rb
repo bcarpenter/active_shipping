@@ -21,7 +21,7 @@ module ActiveMerchant #:nodoc:
       alias_method :region, :province
       
       def initialize(options = {})
-        @country = (options[:country].nil? or options[:country].is_a?(ActiveMerchant::Country)) ?
+        @country = (options[:country].nil? or options[:country] == '' or options[:country].is_a?(ActiveMerchant::Country)) ?
                       options[:country] :
                       ActiveMerchant::Country.find(options[:country])
         @postal_code = options[:postal_code] || options[:postal] || options[:zip]

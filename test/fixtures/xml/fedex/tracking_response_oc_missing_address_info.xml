@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<v3:TrackReply xmlns:v3="http://fedex.com/ws/track/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <v3:HighestSeverity>SUCCESS</v3:HighestSeverity>
+  <v3:Notifications>
+    <v3:Severity>SUCCESS</v3:Severity>
+    <v3:Source>trck</v3:Source>
+    <v3:Code>0</v3:Code>
+    <v3:Message>Request was successfully processed.</v3:Message>
+    <v3:LocalizedMessage>Request was successfully processed.</v3:LocalizedMessage>
+  </v3:Notifications>
+  <v3:TransactionDetail>
+    <v3:CustomerTransactionId>ActiveShipping</v3:CustomerTransactionId>
+  </v3:TransactionDetail>
+  <v3:Version>
+    <v3:ServiceId>trck</v3:ServiceId>
+    <v3:Major>3</v3:Major>
+    <v3:Intermediate>0</v3:Intermediate>
+    <v3:Minor>0</v3:Minor>
+  </v3:Version>
+  <v3:DuplicateWaybill>false</v3:DuplicateWaybill>
+  <v3:MoreData>false</v3:MoreData>
+  <v3:TrackDetails>
+    <v3:TrackingNumber>123456789098</v3:TrackingNumber>
+    <v3:TrackingNumberUniqueIdentifier>2222222222~123456789098</v3:TrackingNumberUniqueIdentifier>
+    <v3:StatusCode>DL</v3:StatusCode>
+    <v3:StatusDescription>Delivered</v3:StatusDescription>
+    <v3:CarrierCode>FDXE</v3:CarrierCode>
+    <v3:ServiceInfo>Standard Overnight</v3:ServiceInfo>
+    <v3:ServiceType>STANDARD_OVERNIGHT</v3:ServiceType>
+    <v3:PackageWeight>
+      <v3:Units>LB</v3:Units>
+      <v3:Value>7.0</v3:Value>
+    </v3:PackageWeight>
+    <v3:ShipmentWeight>
+      <v3:Units>LB</v3:Units>
+      <v3:Value>7.0</v3:Value>
+    </v3:ShipmentWeight>
+    <v3:Packaging>Your Packaging</v3:Packaging>
+    <v3:PackageSequenceNumber>1</v3:PackageSequenceNumber>
+    <v3:PackageCount>1</v3:PackageCount>
+    <v3:ShipTimestamp>2009-09-21T15:52:00-04:00</v3:ShipTimestamp>
+    <v3:DestinationAddress>
+      <v3:City>san jose</v3:City>
+      <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+      <v3:CountryCode>US</v3:CountryCode>
+      <v3:Residential>false</v3:Residential>
+    </v3:DestinationAddress>
+    <v3:ActualDeliveryTimestamp>2009-09-22T13:45:00-07:00</v3:ActualDeliveryTimestamp>
+    <v3:ActualDeliveryAddress>
+      <v3:City>san jose</v3:City>
+      <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+      <v3:CountryCode>US</v3:CountryCode>
+      <v3:Residential>false</v3:Residential>
+    </v3:ActualDeliveryAddress>
+    <v3:DeliveryLocationType>RESIDENCE</v3:DeliveryLocationType>
+    <v3:DeliveryLocationDescription>Residence</v3:DeliveryLocationDescription>
+    <v3:DeliverySignatureName>Signature not required</v3:DeliverySignatureName>
+    <v3:SignatureProofOfDeliveryAvailable>false</v3:SignatureProofOfDeliveryAvailable>
+    <v3:ProofOfDeliveryNotificationsAvailable>true</v3:ProofOfDeliveryNotificationsAvailable>
+    <v3:ExceptionNotificationsAvailable>false</v3:ExceptionNotificationsAvailable>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T13:45:00-07:00</v3:Timestamp>
+      <v3:EventType>DL</v3:EventType>
+      <v3:EventDescription>Delivered</v3:EventDescription>
+      <v3:StatusExceptionCode>02</v3:StatusExceptionCode>
+      <v3:StatusExceptionDescription>Left at front door. Package delivered to recipient address - release authorized</v3:StatusExceptionDescription>
+      <v3:Address>
+        <v3:City>san jose</v3:City>
+        <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+        <v3:PostalCode>95120</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T08:28:00-07:00</v3:Timestamp>
+      <v3:EventType>OD</v3:EventType>
+      <v3:EventDescription>On FedEx vehicle for delivery</v3:EventDescription>
+      <v3:Address>
+        <v3:City>SAN JOSE</v3:City>
+        <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+        <v3:PostalCode>95131</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T07:57:00-07:00</v3:Timestamp>
+      <v3:EventType>AR</v3:EventType>
+      <v3:EventDescription>At local FedEx facility</v3:EventDescription>
+      <v3:Address>
+        <v3:City>SAN JOSE</v3:City>
+        <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+        <v3:PostalCode>95131</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T07:08:00-07:00</v3:Timestamp>
+      <v3:EventType>AR</v3:EventType>
+      <v3:EventDescription>At dest sort facility</v3:EventDescription>
+      <v3:Address>
+        <v3:City>SAN JOSE</v3:City>
+        <v3:StateOrProvinceCode>CA</v3:StateOrProvinceCode>
+        <v3:PostalCode>95110</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T04:38:00-05:00</v3:Timestamp>
+      <v3:EventType>DP</v3:EventType>
+      <v3:EventDescription>Departed FedEx location</v3:EventDescription>
+      <v3:Address>
+        <v3:City>MEMPHIS</v3:City>
+        <v3:StateOrProvinceCode>TN</v3:StateOrProvinceCode>
+        <v3:PostalCode>38118</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-22T00:44:00-05:00</v3:Timestamp>
+      <v3:EventType>AR</v3:EventType>
+      <v3:EventDescription>Arrived at FedEx location</v3:EventDescription>
+      <v3:Address>
+        <v3:City>MEMPHIS</v3:City>
+        <v3:StateOrProvinceCode>TN</v3:StateOrProvinceCode>
+        <v3:PostalCode>38118</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-21T22:01:00-04:00</v3:Timestamp>
+      <v3:EventType>DP</v3:EventType>
+      <v3:EventDescription>Left FedEx origin facility</v3:EventDescription>
+      <v3:Address>
+        <v3:City>LEXINGTON</v3:City>
+        <v3:StateOrProvinceCode>KY</v3:StateOrProvinceCode>
+        <v3:PostalCode>40511</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-21T19:07:37-05:00</v3:Timestamp>
+      <v3:EventType>OC</v3:EventType>
+      <v3:EventDescription>Shipment information sent to FedEx</v3:EventDescription>
+      <v3:Address>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+    <v3:Events>
+      <v3:Timestamp>2009-09-21T15:52:00-04:00</v3:Timestamp>
+      <v3:EventType>PU</v3:EventType>
+      <v3:EventDescription>Picked up</v3:EventDescription>
+      <v3:Address>
+        <v3:City>LEXINGTON</v3:City>
+        <v3:StateOrProvinceCode>KY</v3:StateOrProvinceCode>
+        <v3:PostalCode>40511</v3:PostalCode>
+        <v3:CountryCode>US</v3:CountryCode>
+        <v3:Residential>false</v3:Residential>
+      </v3:Address>
+    </v3:Events>
+  </v3:TrackDetails>
+</v3:TrackReply>

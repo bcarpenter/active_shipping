@@ -42,6 +42,12 @@ class FedExTest < Test::Unit::TestCase
     assert_equal response.shipment_events.map(&:time).sort, response.shipment_events.map(&:time)
   end
   
+  def test_find_tracking_info_handles_missing_locations
+    @carrier.expects(:commit).returns(xml_fixture('fedex/tracking_response_oc_missing_address_info'))
+    response = @carrier.find_tracking_info('077973360403984', :test => true)
+    assert response.shipment_events.any? {|e| e.location.to_s == ''}
+  end  
+  
   def test_building_request_and_parsing_response
     expected_request = xml_fixture('fedex/ottawa_to_beverly_hills_rate_request')
     mock_response = xml_fixture('fedex/ottawa_to_beverly_hills_rate_response')
