@@ -1,5 +1,6 @@
 .DS_Store
 test.xml
+test/fixtures.yml
 sample.rb
 *.orig
 pkg
