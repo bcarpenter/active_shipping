@@ -1,3 +1,4 @@
+log/*.log
 TODO.todo
 .DS_Store
 test.xml

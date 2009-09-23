@@ -6,7 +6,7 @@ class FedExTest < Test::Unit::TestCase
     @packages  = TestFixtures.packages
     @locations = TestFixtures.locations
     @carrier   = FedEx.new(fixtures(:fedex))
-    FedEx.logger = Logger.new('/Users/james/.active_merchant/fedex.log')
+    FedEx.logger = Logger.new(File.dirname(__FILE__) + '/../../log/fedex.log')
   end
     
   def test_us_to_canada
