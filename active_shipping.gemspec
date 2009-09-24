@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
      "README.markdown",
      "Rakefile",
      "Rakefile",
-     "TODO.todo",
      "VERSION",
      "lib/active_shipping.rb",
      "lib/active_shipping/lib/connection.rb",

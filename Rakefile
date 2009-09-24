@@ -44,7 +44,7 @@ begin
     s.homepage = "http://github.com/bcarpenter/active_shipping"
     s.description = "Use for Fedex/UPS/USPS tracking and more... Originally from: http://github.com/Shopify/active_shipping"
     s.authors = ["Shopify"]
-    s.files =  FileList["[A-Z]*", "{lib,examples}/**/*", "Rakefile"]
+    s.files =  FileList["[A-Z]*", "{lib,examples}/**/*", "Rakefile"] - ["TODO.todo"]
     s.add_dependency 'activesupport'
   end
 rescue LoadError
