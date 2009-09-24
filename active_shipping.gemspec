@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{active_shipping}
-  s.version = "0.0.2"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Shopify"]
-  s.date = %q{2009-09-22}
+  s.date = %q{2009-09-23}
   s.description = %q{Use for Fedex/UPS/USPS tracking and more... Originally from: http://github.com/Shopify/active_shipping}
   s.email = %q{ben@bencarpenter.org}
   s.extra_rdoc_files = [
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "README.markdown",
      "Rakefile",
      "Rakefile",
+     "TODO.todo",
      "VERSION",
      "lib/active_shipping.rb",
      "lib/active_shipping/lib/connection.rb",
