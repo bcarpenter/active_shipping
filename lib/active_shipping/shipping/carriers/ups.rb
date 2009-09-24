@@ -284,6 +284,7 @@ module ActiveMerchant
           activities = first_package.get_elements('Activity')
           unless activities.empty?
             shipment_events = activities.map do |activity|
+              status_code = activity.get_text('Status/StatusType/Code').to_s
               description = activity.get_text('Status/StatusType/Description').to_s
               zoneless_time = if (time = activity.get_text('Time')) &&
                                  (date = activity.get_text('Date'))
@@ -293,7 +294,9 @@ module ActiveMerchant
                 Time.utc(year, month, day, hour, minute, second)
               end
               location = location_from_address_node(activity.elements['ActivityLocation/Address'])
-              ShipmentEvent.new(description, zoneless_time, location)
+
+              
+              ShipmentEvent.new(description, zoneless_time, location, status_code)
             end
             
             shipment_events = shipment_events.sort_by(&:time)

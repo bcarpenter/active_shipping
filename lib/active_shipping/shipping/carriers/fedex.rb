@@ -279,7 +279,8 @@ module ActiveMerchant
             time = Time.parse("#{event.get_text('Timestamp').to_s}")
             zoneless_time = Time.utc(time.year, time.month, time.mday, time.hour, time.min, time.sec)
             
-            shipment_events << ShipmentEvent.new(description, zoneless_time, location)
+            status_code = event.get_text('EventType').to_s
+            shipment_events << ShipmentEvent.new(description, zoneless_time, location, status_code)
           end
           shipment_events = shipment_events.sort_by(&:time)
         end
