@@ -1,4 +1,7 @@
-* Fixed bug that causes fedex tracking to crash on some tracking #s
+* Fix bug so that Fedex shipment event times take time zone into account 
+* Add support for reading status codes for shipment events
+* Fix bug that causes a_s's fedex tracking to crash on some tracking #s w/missing location information
+
 * Remove ftools for Rails 1.9 compatibility and remove xml logging, as logging is now included in the connection [cody]
 * Update connection code from ActiveMerchant [cody]
 * Fix space-ridden USPS usernames when validating credentials [james]
