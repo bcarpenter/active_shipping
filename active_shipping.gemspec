@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{bcarpenter-active_shipping}
-  s.version = "0.0.8"
+  s.name = %q{active_shipping}
+  s.version = "0.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Shopify"]
-  s.date = %q{2009-09-29}
+  s.date = %q{2009-10-01}
   s.description = %q{Use for Fedex/UPS/USPS tracking and more... Originally from: http://github.com/Shopify/active_shipping}
   s.email = %q{ben@bencarpenter.org}
   s.extra_rdoc_files = [
