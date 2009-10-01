@@ -53,7 +53,7 @@ module ActiveMerchant #:nodoc:
       @name  
     end
 
-    COUNTRIES = [
+    @@COUNTRIES = [
       { :alpha2 => 'AF', :name => 'Afghanistan', :alpha3 => 'AFG', :numeric => '004' }, 
       { :alpha2 => 'AL', :name => 'Albania', :alpha3 => 'ALB', :numeric => '008' }, 
       { :alpha2 => 'DZ', :name => 'Algeria', :alpha3 => 'DZA', :numeric => '012' }, 
@@ -308,9 +308,9 @@ module ActiveMerchant #:nodoc:
       when 2, 3
         upcase_name = name.upcase
         country_code = CountryCode.new(name)
-        country = COUNTRIES.detect{|c| c[country_code.format] == upcase_name }
+        country = @@COUNTRIES.detect{|c| c[country_code.format] == upcase_name }
       else
-        country = COUNTRIES.detect{|c| c[:name] == name }
+        country = @@COUNTRIES.detect{|c| c[:name] == name }
       end
       raise InvalidCountryCodeError, "No country could be found for the country #{name}" if country.nil?
       Country.new(country.dup)
