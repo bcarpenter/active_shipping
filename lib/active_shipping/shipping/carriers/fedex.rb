@@ -279,7 +279,15 @@ module ActiveMerchant
             time = Time.iso8601("#{event.get_text('Timestamp').to_s}")
             
             status_code = event.get_text('EventType').to_s
-            shipment_events << ShipmentEvent.new(description, time, location, status_code)
+            
+            shipment_event = ShipmentEvent.new(description, time, location, status_code)
+            if event.get_text('StatusExceptionDescription') # this means that this event is an exception, and has an additional description message
+              status_exception_description = event.get_text('StatusExceptionDescription').to_s
+              status_exception_code = event.get_text('StatusExceptionCode').to_s
+              shipment_event = ShipmentExceptionEvent.new(description, time, location, status_code, nil, status_exception_description, status_exception_code) # nil message
+            end
+            shipment_events << shipment_event
+            
           end
           shipment_events = shipment_events.sort_by(&:time)
         end

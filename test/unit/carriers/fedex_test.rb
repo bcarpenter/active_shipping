@@ -46,7 +46,16 @@ class FedExTest < Test::Unit::TestCase
     @carrier.expects(:commit).returns(xml_fixture('fedex/tracking_response_oc_missing_address_info'))
     response = @carrier.find_tracking_info('077973360403984', :test => true)
     assert response.shipment_events.any? {|e| e.location.to_s == ''}
-  end  
+  end
+  
+  def test_find_tracking_info_handles_exceptions
+    @carrier.expects(:commit).returns(xml_fixture('fedex/tracking_response_oc_missing_address_info'))
+    response = @carrier.find_tracking_info('077973360403984', :test => true)
+    assert response.shipment_events.any? {|e| e.kind_of?(ShipmentExceptionEvent) && e.status_exception_code == '02' && e.status_exception_description == 'Left at front door. Package delivered to recipient address - release authorized'}
+    assert_nothing_raised do
+      assert response.shipment_events.any? {|e| e.status_exception_code == '02' && e.status_exception_description == 'Left at front door. Package delivered to recipient address - release authorized'}
+    end
+  end
   
   def test_building_request_and_parsing_response
     expected_request = xml_fixture('fedex/ottawa_to_beverly_hills_rate_request')
